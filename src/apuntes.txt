@@ -1,0 +1,38 @@
+
+Las fuentes e imagenes han sido desrcagadas e insertadas en nuestra carpeta 12.authApp -> src -> assets
+
+Conectando el BackEnd a Angular:
+
+- import {HttpClientModule} from '@angular/common/http'; en app.module
+- creamos auth.service
+- introducimos las variables en environment
+
+
+
+
+SUBIR A PRODUCCION.
+
+Una vez acabado el proyecto, en la terminal con el cd a este proyecto
+hacemos un ng build --prod
+Esto genera un archivo dist -> authApp con todos los archivos
+Copiamos estos archivos y los metemos dentro de nuestro authServer, 
+en la carpeta de public.
+
+Al cargar el localhost, al ir a dashboard y recargar no podemos obtener la
+página, por ello aqui en angula ren app routing module ponemos 
+useHash: true y volvemos a repetir el proceso. Esto resolveria el problema.
+
+En este caso este problema lo hemos resuelto en el backend.
+Hemos puesto el useHash : false y en el backend hemos definido que cargue
+el index.html cuando la ruta no esté especificada en el backend.
+
+En el backedn crear carpeta .gitignore
+
+seguir intrucciones heroku.
+
+OJO en mongo atlas incluir la ip 0.0.0.0/0 para que heroku se pueda conectar
+
+cambiar la url en el environment de produccion al de heroku
+
+volver a hacer el ng build, pasar los archivos al public del backend y
+hacer el git de nuevo de heroku
